@@ -9,6 +9,7 @@
     <authorUrl>https://www.web357.com</authorUrl>
     <version>CVS: 1.0.0</version>
     <description></description>
+    <scriptfile>installer/installer.script.php</scriptfile>
     <namespace path="src">Webtest\Component\Web357test</namespace>
     
     
@@ -27,6 +28,9 @@
         <sql>
             <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
         </sql>
+        <modules>
+            <module client="site">mod_web357_random_recipe</module>
+        </modules>
     </uninstall>
 
     
@@ -46,6 +50,9 @@
 			<language tag="en-GB">en-GB/com_web357test.ini</language>
 			<language tag="el-GR">el-GR/com_web357test.ini</language>
     </languages>
+    <modules>
+        <module module="mod_web357_random_recipe" client="site" />
+    </modules>
     <administration>
         <menu>COM_WEB357TEST</menu>
         <submenu>

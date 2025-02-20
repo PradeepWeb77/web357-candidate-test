@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" client="site" method="upgrade">
+    <name>Random Recipe</name>
+    <creationDate>2025-02-18</creationDate>
+    <copyright>2025 Web357.com</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Web357 Dev</author>
+    <authorEmail>careers@web357.com</authorEmail>
+    <authorUrl>https://www.web357.com</authorUrl>
+    <version>1.0.0</version>
+    <description></description>
+    <files>
+        <filename module="mod_web357_random_recipe">mod_web357_random_recipe.php</filename>
+        <folder>src</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB.mod_web357_random_recipe.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="moduleclass_sfx" type="text" label="Module Class Suffix" />
+                <field name="custom_text" type="text" label="MOD_WEB357_RANDOM_RECIPE_CUSTOM_TEXT" />
+                <field name="limit" type="number" default="1" label="MOD_WEB357_RANDOM_RECIPE_LIMIT_FIELD" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
+
