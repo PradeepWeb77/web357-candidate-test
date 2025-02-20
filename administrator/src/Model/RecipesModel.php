@@ -50,6 +50,7 @@ class RecipesModel extends ListModel
 				'ingredients', 'a.ingredients',
 				'cooking_time', 'a.cooking_time',
 				'difficulty', 'a.difficulty',
+				'serving_size', 'a.serving_size',
 			);
 		}
 
@@ -113,6 +114,8 @@ class RecipesModel extends ListModel
 	{
 		// Compile the store id.
 		$id .= ':' . $this->getState('filter.search');
+		$id .= ':' . $this->getState('filter.serving_size');
+		$id .= ':' . $this->getState('filter.difficulty');
 		$id .= ':' . $this->getState('filter.state');
 
 		
@@ -181,6 +184,22 @@ class RecipesModel extends ListModel
 				
 			}
 		}
+
+		// Filter by search in serving size
+		$serving_size = $this->getState('filter.serving_size');
+
+		if (!empty($serving_size))
+		{
+				$query->where('a.serving_size = ' .  $db->Quote($serving_size));
+		}
+
+		// Filter by search in difficulty
+		$difficulty = $this->getState('filter.difficulty');
+
+		if (!empty($difficulty))
+		{
+				$query->where('a.difficulty = ' .  $db->Quote($difficulty));
+		}
 		
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering', 'id');
@@ -190,7 +209,7 @@ class RecipesModel extends ListModel
 		{
 			$query->order($db->escape($orderCol . ' ' . $orderDirn));
 		}
-
+		
 		return $query;
 	}
 
