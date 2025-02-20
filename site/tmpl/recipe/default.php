@@ -62,9 +62,29 @@ if (!$canEdit && Factory::getApplication()->getIdentity()->authorise('core.edit.
 
 			if (!empty($this->item->difficulty) || $this->item->difficulty === 0)
 			{
-				echo Text::_('COM_WEB357TEST_RECIPES_DIFFICULTY_OPTION_' . preg_replace('/[^A-Za-z0-9\_-]/', '',strtoupper(str_replace(' ', '_',$this->item->difficulty))));
+				//echo Text::_('COM_WEB357TEST_RECIPES_DIFFICULTY_OPTION_' . preg_replace('/[^A-Za-z0-9\_-]/', '',strtoupper(str_replace(' ', '_',$this->item->difficulty))));
+
+				switch ($this->item->difficulty) {
+					case 'easy':
+						echo '<label title="easy"><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span></label>';
+						break;
+					case 'medium':
+						echo '<label title="medium"><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span></label>';
+						break;
+					case 'hard':
+						echo '<label title="hard"><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span></label>';
+						break;
+					default:
+						echo "";
+						break;
+				}
 			}
 			?></td>
+		</tr>
+
+		<tr>
+			<th><?php echo Text::_('COM_WEB357TEST_FORM_LBL_RECIPE_SERVING_SIZE'); ?></th>
+			<td><?php echo $this->item->serving_size; ?></td>
 		</tr>
 
 	</table>

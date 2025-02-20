@@ -52,6 +52,7 @@ class RecipesModel extends ListModel
 				'ingredients', 'a.ingredients',
 				'cooking_time', 'a.cooking_time',
 				'difficulty', 'a.difficulty',
+				'serving_size', 'a.serving_size',
 			);
 		}
 

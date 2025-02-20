@@ -77,6 +77,9 @@ $wa->useStyle('com_web357test.list');
 					<th class=''>
 						<?php echo HTMLHelper::_('grid.sort',  'COM_WEB357TEST_RECIPES_DIFFICULTY', 'a.difficulty', $listDirn, $listOrder); ?>
 					</th>
+					<th class=''>
+						<?php echo HTMLHelper::_('grid.sort',  'COM_WEB357TEST_RECIPES_SERVING_SIZE', 'a.serving_size', $listDirn, $listOrder); ?>
+					</th>
 
 						<?php if ($canEdit || $canDelete): ?>
 					<th class="center">
@@ -136,7 +139,26 @@ $wa->useStyle('com_web357test.list');
 						<?php echo $item->cooking_time; ?>
 					</td>
 					<td>
-						<?php echo $item->difficulty; ?>
+						<?php if(!empty($item->difficulty)) : ?>
+							<?php switch ($item->difficulty) {
+								case 'easy':
+									echo '<label title="easy"><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span></label>';
+									break;
+								case 'medium':
+									echo '<label title="medium"><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span></label>';
+									break;
+								case 'hard':
+									echo '<label title="hard"><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span><span class="icon-star icon-fw" aria-hidden="true" style="color: #a5a52b;"></span></label>';
+									break;
+								default:
+									echo "";
+									break;
+							} ?>
+							<?php //echo $item->difficulty; ?>
+						<?php endif; ?>
+					</td>
+					<td>
+						<?php echo $item->serving_size; ?>
 					</td>
 					<?php if ($canEdit || $canDelete): ?>
 						<td class="center">
