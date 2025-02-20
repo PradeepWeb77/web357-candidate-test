@@ -9,7 +9,7 @@
     <authorUrl>https://www.web357.com</authorUrl>
     <version>CVS: 1.0.0</version>
     <description></description>
-    <scriptfile>installer/installer.script.php</scriptfile>
+    <scriptfile folder="installer">installer.script.php</scriptfile>
     <namespace path="src">Webtest\Component\Web357test</namespace>
     
     
