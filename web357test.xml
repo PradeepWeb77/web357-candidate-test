@@ -69,6 +69,7 @@
             <folder>services</folder>
             <folder>presets</folder>
             <folder>sql</folder>
+            <folder>tests</folder>
         </files>
         <languages folder="administrator/languages">
             

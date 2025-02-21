@@ -1,151 +1,97 @@
-# 🚀 Web357 Test Component - Developer Skills Assessment
+# 🚀 Web357 Test Component - Developer Skills Assessment - Submission
 
-Welcome to the Web357 developer skills assessment! 👋 This is a practical test designed to evaluate your understanding of Joomla component and module development. You'll be working with a basic recipes component and implementing new features, modifying existing functionality, and creating a complementary module.
+    Thanks a lot for the opportunity you gave to show my Joomla! development skills. So here I have implemented the features and functionalities as you have mentioned in the assessment. I am going to write details here as much as possible.
 
-## 📝 Development Requirements
+🖼️ Demostration of the entire assessment
 
-### 1. Version Control ⭐
+Please watch the video using the link, I went through the backend view, listing and add/edit page including with the filter option and to configure the menu assignment to the recipes menu.
 
--   Create **descriptive commit messages** that clearly explain your changes
--   Make _frequent, atomic commits_ for each logical change
--   ✨ Example of good commit messages:
+As well as I have recorded the frontend for random recipe module and recipe listing and detail page for the difficulty and serving size field updates.
 
-    ```
-    // Good commit message example: ✅
-    Add serving size parameter with configuration and display
+Demo link - https://www.awesomescreenshot.com/video/36866669?key=330b221b7f4ec425c7038d481d8fa595
 
-    - Added serving_size field to configuration.xml
-    - Created new database column for storing serving sizes
-    - Implemented display logic in site/tmpl/recipe/default.php
-    - Added filter options in administrator/components/list.php
-    - Updated language files with new strings
+Backend
 
-    // Another good commit example: ✅
-    Update difficulty icons with accessibility improvements
+## 📝 Added the field for serving size ( serving_size ) for recipe view ✅
+    
+    - Configured the "serving_size" dropdown field in XML for field registration
+    - Added "serving_size" field in SQL install file
+    - Rendered the registered field in add/edit recipe page
+    - Added language variables and translations for the Serving Size field
 
-    - Replaced text-based difficulty with Font Awesome icons
-    - Added aria-labels for screen readers
-    - Included hidden text for accessibility
-    - Updated CSS for icon spacing and alignment
-    - Added tooltip on hover for better UX
+## 📝 Added the filter option of the difficulty and serving size ✅
 
-    // Bad commit message example: ❌
-    updates
+    - Configured the filters in filter XML file for the "serving_size" and "difficulty"
+    - Added support for filter of "serving_size" and "difficulty" in recipe listing page
+    - Modification of recipe model logic for filter query
 
-    // Another bad commit message: ❌
-    fixed some stuff
-    ```
+Frontend
 
-### 2. Documentation 📚
+## 📝 Added the column of serving size and replaced the difficulty values easy, medieum, and hard by the 1 star, 2 star, and 3 star respectively in the recipe listing page. ✅
 
--   Create/update the README.md file in your repository
--   Your README.md should include:
-    -   ✨ Installation instructions
-    -   📋 Changelog of your modifications
-    -   🖼️ Screenshots of new features
-    -   🔍 How to test your changes
-    -   💡 Any assumptions or decisions you made
--   **Important:** Follow [Joomla Coding Standards](https://developer.joomla.org/coding-standards/basic-guidelines.html)
+    - Added the serving size field in recipe listing page
+    - Replaced difficulty label with star based on the easy, medium and hard ( 1 star, 2 star and 3 star respectively ) in listing and detail page of the recipe
+    - Added title attribute for label ( Easy, Medium and Hard )
+    - Updated the languages fields for label translation for serving size for both languages
 
-## 🔧 Getting Started
+## 📝 Added the row of serving size and replaced the difficulty values easy, medieum, and hard by the 1 star, 2 star, and 3 star respectively in the recipe detail page. ✅
 
-### Fork & Installation Instructions 📥
+    - Added the serving size field in recipe listing page
+    - Replaced difficulty label with star based on the easy, medium and hard ( 1 star, 2 star and 3 star respectively ) in listing and detail page of the recipe
+    - Added title attribute for label ( Easy, Medium and Hard )
 
-1. Download and install **Joomla 5.x** from https://downloads.joomla.org/
-2. Fork this repository to your GitHub account:
-    - Click the "Fork" button at the top right of this page
-    - Select your GitHub account as the destination
-3. Copy the files maintaining the directory structure into your Joomla installation
-4. Install the component through Joomla's Extension Manager
+Module
 
-### Working on the Test 💻
+## 📝 Developed the custom module to show the random recipe from the list of added recipes ✅
 
--   Make your changes in your forked repository
--   Commit regularly with clear messages
--   Push your changes to your fork
--   Keep your fork updated if there are any changes to the original repository
+    - Developed the custom module to fetch and show the random recipe
+    - Added the configuration file to show how many random recipe to show in module
+    - Added support for custom text to show for module to instruct user
 
-## ✨ Test Requirements
+📦 Installation related changes ✅
 
-### 1. Component Parameters 🎛️
+    - Updated the component XML file with module node for installation and uninstallation
+    - Added installer file to install module while installation process
 
--   Add a new parameter "_serving_size_" (type="list") with options:
-    -   1-2 servings
-    -   2-4 servings
-    -   4-6 servings
-    -   6-8 servings
-    -   8+ servings
+📋 Changelog detailing all modifications
 
-### 2. Frontend Display 🎨
+    - \administrator\components\com_web357test\forms\recipe.xml
+    - \administrator\components\com_web357test\tmpl\recipe\edit.php
+    - \administrator\language\en-GB\com_web357test.ini
+    - \administrator\components\com_web357test\sql\install.mysql.utf8.sql
+    - \administrator\components\com_web357test\forms\filter_recipes.xml
+    - \administrator\components\com_web357test\src\Model\RecipesModel.php
+    - \administrator\components\com_web357test\web357test.xml
+    - \components\com_web357test\src\Model\RecipesModel.php
+    - \language\en-GB\com_web357test.ini
+    - \components\com_web357test\tmpl\recipes\default.php
+    - \components\com_web357test\tmpl\recipe\default.php
+    - \modules\mod_web357_random_recipe\*
 
--   Currently, difficulty levels are shown as plain text ("easy", "medium", "hard")
--   **Task:** Replace the text with Font Awesome icons:
-    -   Easy: One icon ⭐
-    -   Medium: Two icons ⭐⭐
-    -   Hard: Three icons ⭐⭐⭐
--   You can choose any appropriate Font Awesome icon
--   _Important:_ Ensure accessibility by keeping the text in a hidden label
--   Display serving size in both recipe list and single recipe views
+📦 Tests cases ✅
 
-### 3. Backend Functionality ⚙️
+    - Added the test cases for difficulty cheker 
+    - Added the test cases for the random recipe checker 
 
--   Add a filter dropdown in the backend recipes list to filter by difficulty level (easy/medium/hard)
--   The filter should:
-    -   Be located in the filters toolbar above the recipes list
-    -   Allow filtering recipes by each difficulty level
-    -   Remember the selected filter state
-    -   Clear when "Clear" button is clicked
+I have added the tests folder at backend component as well as inside the module it self.
 
-### 4. Module Development 📦
+To validate the Test cases 
 
--   Create a new module (`mod_web357_random_recipe`)
--   Display one random recipe on each page reload
--   Include basic recipe details (title, difficulty icons, serving size)
--   Add a link to the full recipe
+Install PHPUnit using Composer if it is not installed using the below command
 
-### 5. Testing 🧪
+    composer require --dev phpunit/phpunit:^9
 
-Write tests using **PHP Unit** _or_ **Cypress**:
+To run all the test cases please execute the command below
 
--   Test the recipe filtering function by difficulty level
--   Test the random recipe selection in the module
--   _Choose either:_
-    -   🔍 **PHP Unit:** Write unit tests for the component and module functions
-    -   🔄 **Cypress:** Create end-to-end tests for the frontend functionality
+    ./vendor/bin/phpunit
 
-## 📤 Submission Requirements
+Alternatively, to run specific tests: Example as below
 
-### 1. Repository 📁
+    ./vendor/bin/phpunit --filter RandomRecipeModuleTest
 
--   Provide access to your Git repository
--   Ensure the repository includes all commits showing your development process
 
-### 2. Documentation 📝
+I have tried my best to explain everything here, I apologies in case I missed anything.
 
--   Updated README.md with:
-    -   📋 Changelog detailing all modifications
-    -   🖼️ Screenshots of new features
-    -   📥 Installation instructions
-    -   ✅ Testing instructions
+It was really nice to performe the assessment and the important is to follow the everything you have mentioned.
 
-### 3. Installable Package 📦
-
--   Provide a ZIP file that can be installed through Joomla's Extension Manager
--   The package should include both the component and module
--   All new features should be functional after installation
-
-**_Important Note:_** The final submission should allow us to install the component and module on a fresh Joomla installation to review all implemented changes.
-
-## 📮 Ready to Submit?
-
-When you've completed all the requirements:
-
-1. Ensure your repository is up to date
-2. Double-check your documentation and screenshots
-3. Create your installable ZIP package
-4. Send an email to careers@web357.com with:
-    - Link to your repository
-    - Your installable ZIP file
-    - Any additional notes or explanations
-
-Good luck! 🍀
+Thanks a lot :)
