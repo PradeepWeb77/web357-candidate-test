@@ -1,6 +1,6 @@
 # 🚀 Web357 Test Component - Developer Skills Assessment - Submission
 
-    Thanks a lot for the opportunity you gave to show my Joomla! development skills. So here I have implemented the features and functionalities as you have mentioned in the assessment. I am going to write details here as much as possible.
+Thanks a lot for the opportunity you gave to show my Joomla! development skills. So here I have implemented the features and functionalities as you have mentioned in the assessment. I am going to write details here as much as possible.
 
 🖼️ Demostration of the entire assessment
 
